@@ -2,6 +2,7 @@ package com.rodrigootubo.jpastudy.controller.basic;
 
 import com.rodrigootubo.jpastudy.dto.CompanyDTO;
 import com.rodrigootubo.jpastudy.dto.CompanyPostDTO;
+import com.rodrigootubo.jpastudy.model.Company;
 import com.rodrigootubo.jpastudy.service.basic.CompanyBasicService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -13,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("v1/company/")
 @RequiredArgsConstructor
-public class companyBasicController {
+public class CompanyBasicController {
 
     private final CompanyBasicService companyBasicService;
 

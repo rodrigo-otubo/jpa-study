@@ -1,6 +1,5 @@
 package com.rodrigootubo.jpastudy.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,7 +11,6 @@ import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "company")
 public class Company implements Serializable {
@@ -25,10 +23,10 @@ public class Company implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "company", fetch = FetchType.EAGER)
     private List<Products> products;
-    /*
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "company", fetch = FetchType.EAGER)
-    private List<Customer> customers;
 
-
-     */
+    public Company(String name, List<Products> products) {
+        this.name = name;
+        products.forEach(product -> product.setCompany(this));
+        this.products = products;
+    }
 }

@@ -10,7 +10,6 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "customer")
 public class Customer implements Serializable {
@@ -21,8 +20,12 @@ public class Customer implements Serializable {
 
     private String name;
 
-    //@ManyToOne
-    //@JoinColumn(name = "company_id")
-    //private Company company;
+    @ManyToOne
+    @JoinColumn(name = "products_id")
+    private Products products;
 
+    public Customer(String name, Products products) {
+        this.name = name;
+        this.products = products;
+    }
 }

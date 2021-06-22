@@ -4,10 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public interface CompanyDTO {
-    @JsonProperty("company_name")
+public interface ProductsDTO {
+    @JsonProperty("product_name")
     String getName();
 
-    @JsonProperty("products")
-    List<ProductsDTO> getProducts();
+    @JsonProperty("customers")
+    List<CustomerDTO> getCustomers();
 }
